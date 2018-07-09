@@ -14,11 +14,13 @@ public class BasketController : MonoBehaviour {
        if(other.gameObject.tag=="Apple")
         {
             Debug.Log("Tag=Apple");
+            this.aud.PlayOneShot(this.appleSE);
             this.director.GetComponent<GameDirector>().GetApple();
         }
        else
         {
             Debug.Log("Tag=Bomb");
+            this.aud.PlayOneShot(this.bombSE);
             this.director.GetComponent<GameDirector>().GetBomb();
         }
         Destroy(other.gameObject);
